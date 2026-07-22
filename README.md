@@ -92,15 +92,32 @@ You can add more tests in `tests/test_recommender.py`.
 ## Sample Recommendation Output
 
 Paste a sample of your recommender's output here as a text block so a reader can see what it produces:
+==================================================
+User profile: {'genre': 'pop', 'mood': 'happy', 'energy': 0.8}
+==================================================
 
-```
-# e.g.:
-# User profile: genre=indie, mood=chill, energy=low
-# Recommendations:
-#   1. ...
-#   2. ...
-#   3. ...
-```
+Top Recommendations:
+
+1. Sunrise City — Neon Echo  (Score: 6.47)
+   Genre: pop | Mood: happy
+   Because: genre match (+3.0), mood match (+2.0), energy closeness (+1.47)
+
+2. Gym Hero — Max Pulse  (Score: 4.30)
+   Genre: pop | Mood: intense
+   Because: genre match (+3.0), energy closeness (+1.3)
+
+3. Rooftop Lights — Indigo Parade  (Score: 3.44)
+   Genre: indie pop | Mood: happy
+   Because: mood match (+2.0), energy closeness (+1.44)
+
+4. Concrete Kingdom — MC Sharpline  (Score: 1.50)
+   Genre: hip-hop | Mood: confident
+   Because: energy closeness (+1.5)
+
+5. Night Drive Loop — Neon Echo  (Score: 1.42)
+   Genre: synthwave | Mood: moody
+   Because: energy closeness (+1.42)
+   
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
 
