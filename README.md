@@ -28,6 +28,29 @@ Some prompts to answer:
 - How do you choose which songs to recommend
 
 You can include a simple diagram or bullet list if helpful.
+- Streaming platforms in real-world use multiple approaches to determine which song to recommend their user. Some of the approaches include using the users listening history, saves to playlists, skips, the metadata of the song such as genre and mood, and whats trending to recommend new songs that align with users music preference. 
+- My version will have some similar approaches such as using the songs metadata. Each song has the following features to help recommend a song: genre,mood,energy,tempo_bpm,valence,danceability,acousticness
+- The user profile has users preferred music style, their favorite mood, the kind of energy they want the songs to be and whether they prefer acoustic instruments. 
+- We can compare the song features with the users profile and use different weights to get the score and rank the songs based on the weights.
+
+
+
+Algorithm Recipe:
+
+>Scoring rules:
+
+Genre is weighted highest because it's the strongest signal of a user's overall taste. Mood is weighted second because it captures listening context (e.g., studying vs. working out) but is more subjective than genre. Energy and acousticness also add points but less than genre and mood because genre and mood should determine the song ranking more but this will act as smaller "fine-tuning" adjustments to the ranking. 
+
+> Data flow:
+- Read the songs.csv
+- for each song, compares its attributes to the user profile and compute a score 
+- use the scores to rank the songs in order from high to low (most related song to least)
+- select the top 1 to recommend
+
+>Potential bias:
+
+This system might over-prioritize genre and mood matches, ignoring songs that user might list but they fall in a genre or mood the user hasn't explicitly favorited. Also, the application never learns from actual listening behavior so the recommendations are only based on user profile but not their listening history and patterns.
+
 
 ---
 
